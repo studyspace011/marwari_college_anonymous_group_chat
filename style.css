@@ -1,0 +1,152 @@
+/* सामान्य CSS रीसेट और बेस स्टाइल */
+/* General CSS reset and base styles */
+:root {
+    --bg: #0f1117;
+    --card: #151823;
+    --muted: #9aa4b2;
+    --text: #e6e8ec;
+    --accent: #7aa2f7;
+    --bubble-me: #1f2330;
+    --bubble-other: #171a25;
+    --danger: #ef4444;
+    --success: #22c55e;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: radial-gradient(1000px 600px at 80% -20%, #1b2133 0%, #0f1117 40%) no-repeat, var(--bg);
+    color: var(--text);
+    font: 15px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    min-height: 100svh; /* मोबाइल व्यूपोर्ट यूनिट का उपयोग करें */
+    display: grid;
+    place-items: center;
+    padding: 10px; /* मोबाइल पर किनारों से पैडिंग */
+}
+
+/* ऐप कंटेनर */
+/* App container */
+.app {
+    width: min(900px, 96vw); /* रिस्पॉन्सिव चौड़ाई */
+    height: min(86svh, 760px); /* रिस्पॉन्सिव ऊंचाई */
+    background: rgba(21,24,35,0.8);
+    backdrop-filter: blur(6px);
+    border: 1px solid #242838;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+}
+
+/* हेडर स्टाइलिंग */
+/* Header styling */
+header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 16px; border-bottom: 1px solid #242838;
+    background: linear-gradient(180deg, #171a25, #141824);
+    flex-wrap: wrap; /* मोबाइल पर तत्वों को रैप करें */
+    gap: 10px; /* मोबाइल पर गैप दें */
+}
+header .title {
+    display: flex; align-items: center; gap: 10px; font-weight: 700;
+    flex-wrap: wrap; /* मोबाइल पर शीर्षक को रैप करें */
+}
+.badge {
+    font-size: 12px; color: var(--muted);
+    padding: 2px 8px; border: 1px solid #2a2f44; border-radius: 999px;
+}
+.controls { display: flex; align-items: center; gap: 10px; }
+.name-input {
+    background: #0f1320; color: var(--text); border: 1px solid #2a2f44;
+    padding: 8px 10px; border-radius: 10px; outline: none; width: 180px;
+    max-width: 100%; /* मोबाइल पर इनपुट की चौड़ाई को सीमित करें */
+}
+.color {
+    width: 38px; height: 36px; border: 1px solid #2a2f44; background: #0f1320; border-radius: 10px;
+}
+
+/* मुख्य सामग्री क्षेत्र */
+/* Main content area */
+main {
+    overflow: auto; padding: 16px; background: radial-gradient(60% 50% at 20% -10%, #14192b 0%, transparent 60%) no-repeat;
+}
+.list { display: flex; flex-direction: column; gap: 10px; }
+.msg {
+    display: grid; grid-template-columns: 52px 1fr; gap: 10px; align-items: start;
+}
+.avatar {
+    width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center;
+    background: #0f1320; border: 1px solid #2a2f44; font-weight: 700;
+}
+.bubble {
+    background: var(--bubble-other); border: 1px solid #242838; border-radius: 14px;
+    padding: 10px 12px; max-width: 100%;
+    word-wrap: break-word; white-space: pre-wrap;
+}
+.me .bubble { background: var(--bubble-me); border-color: #2a2f44; }
+.meta { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.name { font-weight: 700; }
+.time { font-size: 12px; color: var(--muted); }
+.text span.mention { color: var(--accent); font-weight: 600; }
+
+/* फुटर और इनपुट स्टाइलिंग */
+/* Footer and input styling */
+footer {
+    border-top: 1px solid #242838; background: linear-gradient(0deg, #171a25, #141824);
+    padding: 10px; display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center;
+}
+.emoji-btn, .send-btn {
+    background: #0f1320; border: 1px solid #2a2f44; color: var(--text); padding: 10px 12px;
+    border-radius: 12px; cursor: pointer;
+    white-space: nowrap; /* सुनिश्चित करें कि बटन टेक्स्ट रैप न हो */
+}
+.input {
+    background: #0f1320; color: var(--text); border: 1px solid #2a2f44;
+    padding: 12px; border-radius: 12px; outline: none; width: 100%;
+}
+.tray {
+    position: absolute; bottom: 66px; left: 12px; right: 12px;
+    display: none; grid-template-columns: repeat(auto-fill, minmax(36px, 1fr)); gap: 6px;
+    background: #0f1320; border: 1px solid #2a2f44; border-radius: 14px; padding: 8px;
+    max-height: 160px; overflow: auto;
+    z-index: 10; /* सुनिश्चित करें कि ट्रे अन्य तत्वों के ऊपर दिखाई दे */
+}
+.tray button {
+    background: transparent; border: 0; font-size: 20px; cursor: pointer; height: 36px;
+}
+.hint { font-size: 12px; color: var(--muted); padding: 6px 12px 10px; text-align: center; }
+
+/* छोटे स्क्रीन के लिए मीडिया क्वेरी */
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .name-input {
+        flex-grow: 1; /* मोबाइल पर पूरी चौड़ाई का उपयोग करें */
+    }
+    footer {
+        grid-template-columns: auto 1fr; /* मोबाइल पर लेआउट बदलें */
+        grid-template-rows: auto auto; /* मोबाइल पर लेआउट बदलें */
+    }
+    .emoji-btn {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .input {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .send-btn {
+        grid-column: 1 / 3; /* मोबाइल पर भेजें बटन को पूरी चौड़ाई दें */
+        grid-row: 2 / 3;
+    }
+    .tray {
+        bottom: 120px; /* फुटर के ऊपर एडजस्ट करें */
+    }
+}

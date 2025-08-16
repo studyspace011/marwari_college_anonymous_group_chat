@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Campus Chat — Anonymous Group</title>
+    <!-- बाहरी CSS फ़ाइल को लिंक करें -->
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <div class="title">
+                <span>💬 Campus Group Chat</span>
+                <span class="badge">anonymous • auto-save • emoji</span>
+            </div>
+            <div class="controls">
+                <input id="name" class="name-input" placeholder="Your name (optional)" />
+                <input id="color" class="color" type="color" />
+            </div>
+        </header>
+
+        <main>
+            <div id="list" class="list"></div>
+        </main>
+
+        <footer>
+            <button id="emojiBtn" class="emoji-btn">😊</button>
+            <input id="message" class="input" placeholder="Type a message. Use @name to mention." maxlength="500" />
+            <button id="sendBtn" class="send-btn">Send</button>
+            <div id="tray" class="tray" aria-hidden="true"></div>
+        </footer>
+        <div class="hint">Tip: leave name empty to stay Anon. Messages refresh every ~3s.</div>
+    </div>
+
+    <!-- बाहरी JavaScript फ़ाइल को लिंक करें -->
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
