@@ -2,7 +2,7 @@
 // === CONFIG ===
 // अपनी वेब ऐप URL यहां पेस्ट करें (उदाहरण: https://script.google.com/macros/s/AKfycb.../exec)
 // Paste your Web App URL here (e.g., https://script.google.com/macros/s/AKfycb.../exec)
-const API_URL = 'https://script.google.com/macros/s/AKfycbwmnYD-VUJpGOIFQoKqsAyAuezGbUVZGQVVd6tak-ulRfj1f3nN1LxofI0ajfjBy1PvNg/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbzDMVDthP92jbnJ7l_u41jrzAZbxoI58JAHNCfJsenexKiXgT0WIZ0uWq0T--DYilyA7Q/exec';
 const POLL_MS = 3000; // हर 3 सेकंड में नए संदेशों के लिए पोल करें
 
 // === स्थिति ===
@@ -233,4 +233,5 @@ el.color.addEventListener('change', () => ls.setItem('color', el.color.value)); 
 // === Start Polling ===
 fetchMessages(); // प्रारंभिक संदेश लोड
 setInterval(fetchMessages, POLL_MS); // हर 3 सेकंड में संदेशों के लिए पोल करें
+
 
